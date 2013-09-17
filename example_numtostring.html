@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<!--<link rel="stylesheet" type="text/css" href="css/main.css">-->
+	<script src="numbertostring.js"></script>
+	<script type="text/javascript">
+		function button_oncklick(){
+			var input_value = document.getElementById("input_num").value;
+			if(input_value.length > 18)
+			{
+				document.getElementById("number_to_text").innerHTML = "Слишком большое число. Уменьшите его на " + (input_value.length-18)+" знака(ов)";
+				return;
+			}
+			var text = number_to_string(input_value);
+			document.getElementById("number_to_text").innerHTML = text;
+		}
+	</script>
+	<title>Число в строку</title>
+</head>
+<body>
+<input id="input_num" type="text" size="18"/><button onclick="button_oncklick()">Вывести текст</button>
+<div id="number_to_text"></div>
+</body>
+</html>
